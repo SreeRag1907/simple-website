@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Responsive Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">🌟 UniqueSite</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger" id="burger">&#9776;</div>
+    </nav>
+    <header id="home">
+        <h1>Welcome to Your Unique Responsive Website!</h1>
+        <p>This site is custom-made for you!</p>
+        <button onclick="showFeature()">Show Feature</button>
+    </header>
+    <section id="feature" class="hidden">
+        <h2>Cool Feature</h2>
+        <div class="feature-box">
+            <p id="featureText">Press the button to reveal a random fun fact!</p>
+            <button onclick="generateFact()">Random Fact</button>
+        </div>
+    </section>
+    <footer id="contact">
+        <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>&copy; 2025 UniqueSite</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
