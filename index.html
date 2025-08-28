@@ -1,37 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique Responsive Site</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Web Page Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 0 15px;
+    }
+    footer {
+      background-color: #212529;
+      color: #bbb;
+      padding: 20px 0;
+    }
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Section images */
+    .section-image {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">🌟 UniqueSite</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#feature">Feature</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger" id="burger">&#9776;</div>
-    </nav>
-    <header id="home">
-        <h1>Welcome to Your Unique Responsive Website!</h1>
-        <p>This site is custom-made for you!</p>
-        <button onclick="showFeature()">Show Feature</button>
-    </header>
-    <section id="feature" class="hidden">
-        <h2>Cool Feature</h2>
-        <div class="feature-box">
-            <p id="featureText">Press the button to reveal a random fun fact!</p>
-            <button onclick="generateFact()">Random Fact</button>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">MySite</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero mb-5">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1 class="display-4 fw-bold">Welcome to My Responsive Site</h1>
+    <p class="lead">Creating modern websites that look great on any device.</p>
+    <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="container mb-5">
+  <h2 class="text-center mb-4">Our Features</h2>
+  <div class="row g-4">
+    <div class="col-md-4 text-center">
+      <div class="p-4 border rounded shadow-sm h-100">
+        <div class="mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#0d6efd" class="bi bi-speedometer" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H8a.5.5 0 0 1-.5-.5V4.5A.5.5 0 0 1 8 4z"/>
+            <path fill-rule="evenodd" d="M3.327 7.01A5 5 0 1 1 13 8a.5.5 0 0 1-1 0 4 4 0 1 0-7.118-.99l-.555-.001z"/>
+          </svg>
         </div>
-    </section>
-    <footer id="contact">
-        <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
-        <p>&copy; 2025 UniqueSite</p>
-    </footer>
-    <script src="script.js"></script>
+        <h4>Fast Performance</h4>
+        <p>Optimized for speed to provide the best user experience possible.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="p-4 border rounded shadow-sm h-100">
+        <div class="mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#0d6efd" class="bi bi-phone" viewBox="0 0 16 16">
+            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 13v-1H6v1h4zm0-3V5H6v6h4z"/>
+          </svg>
+        </div>
+        <h4>Mobile Friendly</h4>
+        <p>Looks great and works perfectly on all mobile devices and tablets.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="p-4 border rounded shadow-sm h-100">
+        <div class="mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#0d6efd" class="bi bi-shield-lock" viewBox="0 0 16 16">
+            <path d="M5.5 8a1.5 1.5 0 1 1 3 0v1h-3V8z"/>
+            <path d="M8 0c-.69 0-1.356.146-2 .43C4.72.713 3.705 1.22 3 2c-.7.77-1 1.9-1 3 0 3.25 2.487 5.857 5.54 6.964a1.25 1.25 0 0 0 1.46 0c3.054-1.106 5.54-3.715 5.54-6.964 0-1.1-.3-2.23-1-3-.705-.78-1.72-1.287-3-1.57A6.994 6.994 0 0 0 8 0z"/>
+          </svg>
+        </div>
+        <h4>Secure</h4>
+        <p>Your data is protected with top-notch security measures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="container mb-5">
+  <h2 class="text-center mb-4">About Us</h2>
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="About Us" class="section-image" />
+    </div>
+    <div class="col-lg-6">
+      <h3>Who We Are</h3>
+      <p>
+        We are a team dedicated to building beautiful and responsive web solutions tailored to your needs. With years of experience in design and development, we bring your ideas to life.
+      </p>
+      <p>
+        Our mission is to provide seamless user experiences that work perfectly across all devices and platforms.
+      </p>
+      <a href="#" class="btn btn-outline-primary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="container mb-5">
+  <h2 class="text-center mb-4">Our Services</h2>
+  <div class="row align-items-center">
+    <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Services" class="section-image" />
+    </div>
+    <div class="col-lg-6 order-lg-1">
+      <h3>What We Offer</h3>
+      <ul>
+        <li>Custom Website Design</li>
+        <li>Responsive Development</li>
+        <li>E-commerce Solutions</li>
+        <li>SEO Optimization</li>
+        <li>24/7 Support & Maintenance</li>
+      </ul>
+      <a href="#" class="btn btn-outline-primary">See All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <p>© 2025 MySite. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle (Popper + Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
